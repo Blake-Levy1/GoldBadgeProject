@@ -127,7 +127,7 @@ public void Run()
     }
   }
 
-  //            Modify contact     Fix This dont use new method         
+  //            Modify contact            
   public void ModifyContact()
   {
     ViewAllContacts();
@@ -168,6 +168,7 @@ public void Run()
           oldContactInfo.PhoneNumber = updatedInfo;
           break;
       }
+      _addressRepo.EditContactById(oldContactInfo);
     }
   }
 
@@ -219,7 +220,7 @@ public void Run()
   {
     AddressBook blake = new AddressBook(1, "Blake", "address 1", "Blake@gmail.com", "(111)-111-1111");
     AddressBook mallory = new AddressBook(2, "Mallory", "address 2", "Mallory@gmail.com", "(222)-222-2222");
-    AddressBook keaton = new AddressBook(3, "Keaton", "address 2", "Keaton@gmail.com", "(333)-333-3333");
+    AddressBook keaton = new AddressBook(3, "Keaton", "address 3", "Keaton@gmail.com", "(333)-333-3333");
 
     _addressRepo.AddNewContact(blake);
     _addressRepo.AddNewContact(mallory);
