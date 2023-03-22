@@ -1,0 +1,12 @@
+/Users/Blake/elevenfiftyprojects/codingfoundations/assignments/GoldBadgeProject/RepositoryConsoleApp/Repository/bin/Debug/net6.0/Repository.deps.json
+/Users/Blake/elevenfiftyprojects/codingfoundations/assignments/GoldBadgeProject/RepositoryConsoleApp/Repository/bin/Debug/net6.0/Repository.dll
+/Users/Blake/elevenfiftyprojects/codingfoundations/assignments/GoldBadgeProject/RepositoryConsoleApp/Repository/bin/Debug/net6.0/Repository.pdb
+/Users/Blake/elevenfiftyprojects/codingfoundations/assignments/GoldBadgeProject/RepositoryConsoleApp/Repository/obj/Debug/net6.0/Repository.csproj.AssemblyReference.cache
+/Users/Blake/elevenfiftyprojects/codingfoundations/assignments/GoldBadgeProject/RepositoryConsoleApp/Repository/obj/Debug/net6.0/Repository.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Blake/elevenfiftyprojects/codingfoundations/assignments/GoldBadgeProject/RepositoryConsoleApp/Repository/obj/Debug/net6.0/Repository.AssemblyInfoInputs.cache
+/Users/Blake/elevenfiftyprojects/codingfoundations/assignments/GoldBadgeProject/RepositoryConsoleApp/Repository/obj/Debug/net6.0/Repository.AssemblyInfo.cs
+/Users/Blake/elevenfiftyprojects/codingfoundations/assignments/GoldBadgeProject/RepositoryConsoleApp/Repository/obj/Debug/net6.0/Repository.csproj.CoreCompileInputs.cache
+/Users/Blake/elevenfiftyprojects/codingfoundations/assignments/GoldBadgeProject/RepositoryConsoleApp/Repository/obj/Debug/net6.0/Repository.dll
+/Users/Blake/elevenfiftyprojects/codingfoundations/assignments/GoldBadgeProject/RepositoryConsoleApp/Repository/obj/Debug/net6.0/refint/Repository.dll
+/Users/Blake/elevenfiftyprojects/codingfoundations/assignments/GoldBadgeProject/RepositoryConsoleApp/Repository/obj/Debug/net6.0/Repository.pdb
+/Users/Blake/elevenfiftyprojects/codingfoundations/assignments/GoldBadgeProject/RepositoryConsoleApp/Repository/obj/Debug/net6.0/ref/Repository.dll
