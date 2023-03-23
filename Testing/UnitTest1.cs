@@ -3,18 +3,24 @@ public class AddressBookRepositoryTests
 {
     private AddressBookRepository _repo = new AddressBookRepository();
     private AddressBook _contact = new AddressBook();
-    [SetUp]
-    public void RunBeforeTests()
+    
+    
+    [OneTimeSetUp]
+    public void RunOnceBeforeTests()
     {
-        // _contact = new AddressBook(4, "Jasper", "Address 4", "Jasper@gmail.com", "(444)-444-4444");
-        // _repo.AddNewContact(_contact);
-        // AddressBook blake = new AddressBook(1, "Blake", "address 1", "Blake@gmail.com", "(111)-111-1111");
-        // AddressBook mallory = new AddressBook(2, "Mallory", "address 2", "Mallory@gmail.com", "(222)-222-2222");
-        // AddressBook keaton = new AddressBook(3, "Keaton", "address 3", "Keaton@gmail.com", "(333)-333-3333");
 
-        // _repo.AddNewContact(blake);
-        // _repo.AddNewContact(mallory);
-        // _repo.AddNewContact(keaton);
+        AddressBook keaton = new AddressBook(3, "Keaton", "address 3", "Keaton@gmail.com", "(333)-333-3333");
+        AddressBook jasper = new AddressBook(4, "Jasper", "Address 4", "Jasper@gmail.com", "(444)-444-4444");
+
+        _repo.AddNewContact(keaton);
+        _repo.AddNewContact(jasper);
+    }
+
+    [Test]
+    public void ListAllContacts_ShouldGetNotNull()
+    {
+        Dictionary<int, AddressBook> listOfContacts = _repo.ListAllContacts();
+        Assert.IsNotNull(listOfContacts);
     }
 
     [Test]
@@ -36,12 +42,10 @@ public class AddressBookRepositoryTests
     [Test]
     public void GetContactByName_ShouldGetNotNull()
     {
-        _contact = new AddressBook(4, "Jasper", "Address 4", "Jasper@gmail.com", "(444)-444-4444");
-        _repo.AddNewContact(_contact);
 
-        AddressBook contact = _repo.GetContactByName("Jasper");
+        AddressBook jasper = _repo.GetContactByName("Jasper");
 
-        Assert.IsNotNull(contact);
+        Assert.IsNotNull(jasper);
     }
 
     [Test]
@@ -69,8 +73,8 @@ public class AddressBookRepositoryTests
     [Test]
     public void UpdateContact_ShouldReturnTrue() 
     {
-        AddressBook keaton = new AddressBook(3, "Keaton", "address 3", "Keaton@gmail.com", "(333)-333-3333");
-        _repo.AddNewContact(keaton);
+        // AddressBook keaton = new AddressBook(3, "Keaton", "address 3", "Keaton@gmail.com", "(333)-333-3333");
+        // _repo.AddNewContact(keaton);
 
         // AddressBook newContact = new AddressBook();
         AddressBook bentley = new AddressBook(3, "Bentley", "Address 5", "Bentley@gmail.com", "(555)-555-5555");
@@ -81,7 +85,7 @@ public class AddressBookRepositoryTests
 
         Assert.IsTrue(isUpdated);
     }
-    
+
     // [Test]
     // public void UpdateContact_ShouldReturnTrue() 
     // {

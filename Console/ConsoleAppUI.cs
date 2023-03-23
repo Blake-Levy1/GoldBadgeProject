@@ -109,12 +109,21 @@ public void Run()
       System.Console.WriteLine("Enter the name of the contact you would like to find");
       string name = Console.ReadLine();
       AddressBook contact = _addressRepo.GetContactByName(name);
-      contactsToFind.Add(contact);
-      System.Console.WriteLine("Do you want to find another contact? (y/n)");
-      string yesOrNo = Console.ReadLine().ToLower();
-      if (yesOrNo == "n")
+      if (contact != null)
       {
-        addMore = false;
+        contactsToFind.Add(contact);
+        System.Console.WriteLine("Do you want to find another contact? (y/n)");
+        string yesOrNo = Console.ReadLine().ToLower();
+        if (yesOrNo == "n")
+        {
+          addMore = false;
+        }
+      } else 
+      {
+        System.Console.WriteLine("No contact with that name could be found");
+        System.Console.WriteLine("Press any key to continue...");
+        Console.ReadKey();
+        Console.Clear();
       }
     }
     foreach (AddressBook contact in contactsToFind)
@@ -146,30 +155,31 @@ public void Run()
     $"4. PhoneNumber: {oldContactInfo.PhoneNumber}\n" +
     "5. Cancel Changes");
 
-    string inputToChange = Console.ReadLine();
+    string inputToChangeAsString = Console.ReadLine();
+    int inputToChangeAsInt = int.Parse(inputToChangeAsString);
 
-    if (inputToChange != "5")
+    if (inputToChangeAsInt < 5)
     {
       System.Console.WriteLine("What is the updated information for this property?");
       string updatedInfo = Console.ReadLine();
 
-      switch (inputToChange)
+      switch (inputToChangeAsInt)
       {
-        case "1":
+        case 1:
           oldContactInfo.Name = updatedInfo;
           break;
-        case "2":
+        case 2:
           oldContactInfo.Address = updatedInfo;
           break;
-        case "3":
+        case 3:
           oldContactInfo.Email = updatedInfo;
           break;
-        case "4":
+        case 4:
           oldContactInfo.PhoneNumber = updatedInfo;
           break;
       }
       _addressRepo.EditContactById(oldContactInfo);
-    }
+    } 
   }
 
   //            Remove contact               
@@ -180,10 +190,17 @@ public void Run()
     System.Console.WriteLine("Enter the ID of the contact you would like to remove");
     string idAsString = Console.ReadLine();
     int idAsInt = int.Parse(idAsString);
-    _addressRepo.RemoveContactById(idAsInt);
-    System.Console.WriteLine("Contact has been deleted\n Press any key to continue...");
-    Console.ReadKey();
-    Console.Clear();
+    AddressBook contact = _addressRepo.GetContactById(idAsInt);
+    if (contact != null)
+    {
+      _addressRepo.RemoveContactById(idAsInt);
+      System.Console.WriteLine("Contact has been deleted\n Press any key to continue...");
+      Console.ReadKey();
+      Console.Clear();
+    } else 
+    {
+      System.Console.WriteLine("No contact was found under that ID");
+    }
   }
 
   public int GetUniqueId()
